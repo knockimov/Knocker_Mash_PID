@@ -1,0 +1,46 @@
+*Pick And Place List
+*Company=
+*Author=
+*eMail=
+*
+*Project=PID_PoM-Nano&ESP8266F-v100
+*Date=04:21:48
+*CreatedBy=Fritzing 0.9.3b.04.19.5c895d327c44a3114e5fcc9d8260daf0cbb52806
+*
+*
+*Coordinates in mm, always center of component
+*Origin 0/0=Lower left corner of PCB
+*Rotation in degree (0-360, math. pos.)
+*
+*No;Value;Package;X;Y;Rotation;Side;Name
+1;;;20.2692;-21.644;0;Bottom;Via3
+2;;;32.1564;-22.5584;0;Bottom;Via10
+3;10k;THT;21.5226;-6.66822;90;Bottom;R4
+4;;;14.1732;-18.596;0;Bottom;Via1
+5;;;36.0006;-22.1707;180;Bottom;Part2
+6;;THT;8.5686;-36.8942;-90;Bottom;J1
+7;10k;THT;24.3166;-6.66822;90;Bottom;R3
+8;;THT;8.5686;-41.4662;-90;Bottom;J2
+9;220;THT;18.7286;-6.66822;90;Bottom;R2
+10;;[THT];35.4565;-11.2922;-90;Bottom;S5
+11;;;36.7284;-18.2912;0;Bottom;Via11
+12;3.3V;TO220 [THT];19.7122;-33.3382;0;Bottom;U1
+13;;[THT];23.2645;-39.7402;-90;Bottom;S7
+14;;[THT];12.4147;-17.7923;90;Bottom;S2
+15;;[THT];3.79454;-11.2763;-90;Bottom;S1
+16;;;30.9372;-20.12;0;Bottom;Via8
+17;;;17.8308;-21.644;0;Bottom;Via2
+18;;;2.6504;-33.0934;90;Bottom;DS2
+19;;;19.05;-9.7568;0;Bottom;Via5
+20;;;4.4196;-27.74;0;Bottom;Via4
+21;;THT;2.4726;-22.6702;180;Bottom;J3
+22;;;25.7556;-18.2912;0;Bottom;Via7
+23;;;20.574;-16.7672;0;Bottom;Via13
+24;;;2.56503;-40.3924;90;Bottom;DS1
+25;;[THT];21.0507;-11.1883;90;Bottom;S4
+26;;;30.3276;-29.8736;0;Bottom;Via12
+27;;[THT];16.1525;-39.7402;-90;Bottom;S6
+28;;;21.4884;-9.7568;0;Bottom;Via6
+29;;;38.2524;-24.0824;0;Bottom;Via9
+30;;;19.7253;-26.5667;0;Bottom;U5
+31;;[THT];12.4147;-4.83827;90;Bottom;S3
