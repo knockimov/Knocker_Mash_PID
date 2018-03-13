@@ -8,7 +8,7 @@ beställer ett färdigt kretskort (PCB). Länk till mina Gerber-filer finns lite
 
 
 Antal|Komponent|Länk
----------|----
+-----|---------|----
 1st|ESP8266-01|LÄNK
 1st|Arudino Nano v3|LÄNK
 1st|Solid State Relay|LÄNK

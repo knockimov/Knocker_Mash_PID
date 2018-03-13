@@ -7,11 +7,6 @@ prydliga grafer.</h4>
 
 <img src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/temp_setpoint_graph.png"></img>
 
-<h4>Att bygga denna PID är inte speciellt komplicerat eller invecklat. Antingen bygger du den med hjälp av en breadboard och jumprar eller
-beställer ett färdigt kretskort (PCB). Länk till mina Gerber-filer finns lite längre ner.</h4>
-
-<img src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/PID_PoM-Nano%26ESP8266F-v100_bb.png"></img>
-
 
 <h3>Snabblänkar:</h3>
 <ul>
