@@ -5,7 +5,7 @@
 beställer ett färdigt kretskort (PCB). Länk till mina Gerber-filer finns lite längre ner.</h4>
 
 <img width="500" src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/PID_PoM-Nano%26ESP8266F-v100_bb.png"></img>
-<img width="200" src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Knocker_Mash_PID-PCB-v100.png"></img>
+<img width="250" src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Knocker_Mash_PID-PCB-v100.png"></img>
 
 Antal|Komponent|Länk
 -----|---------|----
@@ -20,10 +20,12 @@ Antal|Komponent|Länk
 7st|Knappar|LÄNK
 Xst|Jumperkablar|LÄNK
 
+<h4>Jag länkar till komponenterna på Ebay för att där är det både enklast och till största del även billigast. När jag söker sorterar jag
+träfflistan efter försäljare i Europa för att slippa "Kina-kostnaderna" som Postnord numera tar ut.</h4>
 
 <h3>Snabblänkar:</h3>
 <ul>
-<li>Komponentlista: <a href="https://github.com/knockimov/Knocker_Mash_PID/blob/master/COMPONENTS.md"> länk</a></li>
+<li>Komponentlista: <a href="https://github.com/knockimov/Knocker_Mash_PID/blob/master/COMPONENTS.md"> länk</a> - <b>Du är här!</b></li>
 <li>Gerber-filer (PCB): <a href="https://github.com/knockimov/Knocker_Mash_PID/tree/master/gerber"> länk</a></li>
 <li>Bygginstruktioner: <a href="https://github.com/knockimov/Knocker_Mash_PID/blob/master/BUILD.md"> länk</a></li>
 <li>Sketcher: <a href="https://github.com/knockimov/Knocker_Mash_PID/tree/master/arduino"> länk</a></li>
