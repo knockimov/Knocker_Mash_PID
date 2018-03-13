@@ -5,7 +5,7 @@
 beställer ett färdigt kretskort (PCB). Länk till mina Gerber-filer finns lite längre ner.</h4>
 
 <img src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/PID_PoM-Nano%26ESP8266F-v100_bb.png"></img>
-<img src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Knocker_Mash_PID-PCB-v100.png"></img>
+<img src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Knocker_Mash_PID-PCB-v100.png" style="max-width:50%;></img>
 
 Antal|Komponent|Länk
 -----|---------|----
