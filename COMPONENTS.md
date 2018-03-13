@@ -7,6 +7,9 @@ beställer ett färdigt kretskort (PCB). Länk till mina Gerber-filer finns lite
 <img width="500" src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/PID_PoM-Nano%26ESP8266F-v100_bb.png"></img>
 <img width="250" src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Knocker_Mash_PID-PCB-v100.png"></img>
 
+<h4>Jag länkar till komponenterna på Ebay för att där är det både enklast och till största del även billigast. När jag söker sorterar jag
+träfflistan efter försäljare i Europa för att slippa "Kina-kostnaderna" som Postnord numera tar ut.</h4>
+
 Antal|Komponent|Länk
 -----|---------|----
 1st|ESP8266-01|LÄNK
@@ -19,9 +22,6 @@ Antal|Komponent|Länk
 2st|Resistor 10k Ohm|LÄNK
 7st|Knappar|LÄNK
 Xst|Jumperkablar|LÄNK
-
-<h4>Jag länkar till komponenterna på Ebay för att där är det både enklast och till största del även billigast. När jag söker sorterar jag
-träfflistan efter försäljare i Europa för att slippa "Kina-kostnaderna" som Postnord numera tar ut.</h4>
 
 <h3>Snabblänkar:</h3>
 <ul>
