@@ -4,8 +4,8 @@
 <h4>Att bygga denna PID är inte speciellt komplicerat eller invecklat. Antingen bygger du den med hjälp av en breadboard och jumprar eller
 beställer ett färdigt kretskort (PCB). Länk till mina Gerber-filer finns lite längre ner.</h4>
 
-<img width="350" src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/PID_PoM-Nano%26ESP8266F-v100_bb.png"></img>
-<img width="350" src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Knocker_Mash_PID-PCB-v100.png"></img>
+<img width="500" src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/PID_PoM-Nano%26ESP8266F-v100_bb.png"></img>
+<img width="200" src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Knocker_Mash_PID-PCB-v100.png"></img>
 
 Antal|Komponent|Länk
 -----|---------|----
