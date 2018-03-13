@@ -1,9 +1,25 @@
 # Knocker Mash PID
 <h2>En PID-regulator för mäskning och kokning av vört. Byggd runt Arduino Nano och ESP-01.</h2>
 
-<h4>Denna PID är en IoT (Internet of Things) och är uppkopplad mot Ubidots för loggning av mäsktemperatur och börvärdet som du ställer in.
-Det ger dig möjlighet att visuellt få en bild av hur temperaturen varit under hela mäskningen genom att den loggade datan presenteras i
-prydliga grafer.</h4>
+<h4>Att bygga denna PID är inte speciellt komplicerat eller invecklat. Antingen bygger du den med hjälp av en breadboard och jumprar eller
+beställer ett färdigt kretskort (PCB). Länk till mina Gerber-filer finns lite längre ner.</h4>
+
+<img src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/PID_PoM-Nano%26ESP8266F-v100_bb.png"></img>
+
+
+Antal|Komponent|Länk
+---------|----
+1st|ESP8266-01|LÄNK
+1st|Arudino Nano v3|LÄNK
+1st|Solid State Relay|LÄNK
+1st|5V till 3.3V regulator|LÄNK
+1st|5V Fläkt 40x40mm|LÄNK
+2st|DS18B20 Sensor|LÄNK
+1st|Resistor 4.7k Ohm|LÄNK
+2st|Resistor 10k Ohm|LÄNK
+7st|Knappar|LÄNK
+Xst|Jumperkablar|LÄNK
+
 
 <h3>Snabblänkar:</h3>
 <ul>
@@ -15,8 +31,3 @@ prydliga grafer.</h4>
 <li>Menystruktur: <a href="https://github.com/knockimov/Knocker_Mash_PID/blob/master/MENU.md"> länk</a></li>
 <li>Användarinstruktioner: <a href="https://github.com/knockimov/Knocker_Mash_PID/blob/master/GUIDE.md"> länk</a></li>
 </ul>
-
-Komponent|Länk
----------|----
-Wemos D1 mini|LÄNK
-Knappar|LÄNK
