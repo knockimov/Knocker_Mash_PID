@@ -2,7 +2,7 @@
 <h2>En PID-regulator för mäskning och kokning av vört.
 Byggd runt Arduino Nano och ESP-01.</h2>
 
-<img src=https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/temp_setpoint_graph.png"></img>
+<img src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/temp_setpoint_graph.png"></img>
 
 <h4>Denna PID är en IoT (Internet of Things) och är uppkopplad mot Ubidots för loggning av mäsktemperatur och börvärdet som du ställer in.
 Det ger dig möjlighet att visuellt få en bild av hur temperaturen varit under hela mäskningen genom att den loggade datan presenteras i
