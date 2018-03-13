@@ -1,15 +1,15 @@
 # Knocker Mash PID
 <h2>En PID-regulator för mäskning och kokning av vört. Byggd runt Arduino Nano och ESP-01.</h2>
 
-<h4>För att styra din PID används dem fem knapparna. Menysystemet är uppbyggt enligt nedan schema.</h4>
+För att styra din PID används dem fem knapparna. Menysystemet är uppbyggt enligt nedan schema.
 
 <img src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/menyorientering.png"></img>
 
 När din PID startas kommer den stå i läget "Avstängd" I det läget händer inget och själva systemet
 väntar på användarinput. Din PID är förinställd med P = 85, I = 0,5 och D = 0,5.<p>
 
-För att slå på den och ändra inställningar gör du så här:<br>
-1. Starta systemet genom att trycka på höger knapp en gång.<br>
+För att slå på den och ändra inställningar gör du så här:
+1. Starta systemet genom att trycka på höger knapp en gång.
 - Då slår systemet på temperaturmätarna och börjar ställa temperaturen efter börvärdet.
 2. För att ställa in börvärdet trycket du en gång på höger knapp.<br>
 - Nu kan du höja eller sänka värdet genom att trycka upp eller ner. Värdet höjs med 0,1 grader
