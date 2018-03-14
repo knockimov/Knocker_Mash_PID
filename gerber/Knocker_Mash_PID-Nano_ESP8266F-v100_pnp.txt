@@ -1,0 +1,62 @@
+*Pick And Place List
+*Company=
+*Author=
+*eMail=
+*
+*Project=Knocker_Mash_PID-Nano_ESP8266F-v100
+*Date=23:48:47
+*CreatedBy=Fritzing 0.9.3b.04.19.5c895d327c44a3114e5fcc9d8260daf0cbb52806
+*
+*
+*Coordinates in mm, always center of component
+*Origin 0/0=Lower left corner of PCB
+*Rotation in degree (0-360, math. pos.)
+*
+*No;Value;Package;X;Y;Rotation;Side;Name
+1;;;26.0944;-20.7864;0;Bottom;Via1
+2;;;13.9024;-32.9784;0;Bottom;Via10
+3;;THT;20.2525;-5.03828;0;Bottom;TX/RX
+4;;;43.4922;-45.0447;0;Bottom;TXT2
+5;;;0.491146;-30.2227;90;Bottom;TXT2
+6;;;2.47263;-2.24419;0;Bottom;Hole1
+7;;;37.7785;-15.7064;0;Bottom;Via13
+8;;;30.4124;-14.4364;0;Bottom;Via4
+9;;;28.4568;-45.0975;0;Bottom;TXT2
+10;;;43.6206;-49.7423;0;Bottom;Hole3
+11;;THT;23.3005;-5.03828;0;Bottom;FLASHING THE NANO AND ESP
+12;;[THT];23.2644;-43.4442;-90;Bottom;FLASH
+13;;;12.3785;-25.6124;0;Bottom;Via11
+14;;;39.5564;-19.5164;0;Bottom;Via3
+15;;;12.3762;-28.3945;0;Bottom;Via18
+16;;[THT];35.4564;-14.9962;-90;Bottom;SELECT
+17;;;39.5564;-28.4064;0;Bottom;Via2
+18;;[THT];21.0506;-14.8924;90;Bottom;RIGHT
+19;;THT;8.56855;-45.1703;-90;Bottom;FAN
+20;;;0.528964;-25.0733;90;Bottom;TXT2
+21;;;33.2065;-15.7064;0;Bottom;Via12
+22;;[THT];16.1524;-43.4442;-90;Bottom;RESET
+23;4.7k;THT;32.1905;-38.5663;90;Bottom;4.7k?
+24;;;2.65029;-36.7974;90;Bottom;SEN2
+25;;;0.544768;-22.4785;90;Bottom;TXT2
+26;;[THT];12.4146;-21.0922;90;Bottom;UP
+27;;;36.0005;-25.8749;180;Bottom;ARDUINO NANO
+28;;[THT];3.79441;-14.9804;-90;Bottom;LEFT
+29;;;20.5065;-25.8663;0;Bottom;Via19
+30;;;9.82387;-38.482;0;Bottom;TXT2
+31;;;6.18744;-47.016;0;Bottom;TXT2
+32;;;16.6964;-15.7064;0;Bottom;Via5
+33;;;20.0031;-37.7055;0;Bottom;TXT1
+34;;THT;2.47255;-26.3743;180;Bottom;LCD 16x2
+35;;;12.3784;-36.7884;0;Bottom;Via8
+36;;[THT];12.4146;-9.15423;90;Bottom;DOWN
+37;;;19.7313;-29.8438;180;Bottom;ESP8266-01
+38;;;43.6206;-2.24419;0;Bottom;Hole4
+39;;;7.32394;-38.4461;0;Bottom;TXT2
+40;;;13.4595;-30.8684;0;Bottom;TXT2
+41;;;2.56506;-44.0964;90;Bottom;SEN1
+42;;;6.28245;-36.7884;0;Bottom;Via6
+43;;;10.8774;-47.1651;0;Bottom;TXT2
+44;;THT;8.56855;-40.5983;-90;Bottom;SSR
+45;;;2.47263;-49.7423;0;Bottom;Hole2
+46;;;0.526141;-27.6471;90;Bottom;TXT2
+47;3.3V;TO220 [THT];19.7121;-37.0423;0;Bottom;V.REG3.3
