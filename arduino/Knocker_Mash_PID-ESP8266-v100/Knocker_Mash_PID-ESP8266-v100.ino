@@ -4,27 +4,76 @@
 #include <ESP8266WebServer.h>
 #include <WiFiManager.h>          //https://github.com/tzapu/WiFiManager
 #include <ArduinoJson.h>          //https://github.com/bblanchon/ArduinoJson
-#include <SoftwareSerial.h>
 
 #define USER_AGENT "UbidotsESP8266"
 #define VERSION "1.6"
 #define HTTPSERVER "things.ubidots.com"
 
-String readString, substring;
-int temp_loc1, temp_loc2, setpoint_loc;
-String temp1, temp2, setpoint;
+char ubidotsToken[35] = "";
+char tempID1[25] = "";
+char tempID2[25] = "";
+char setpointID[25] = "";
 
-char ubidotsToken[35];
-char tempID1[25];
-char tempID2[25];
-char setpointID[25];
+const byte numChars = 32;
+char receivedChars[numChars]; // an array to store the received data
+boolean newData = false;
 
 unsigned long prevMillisUbidots  = 0;               // will store last time Ubidots was updated
 const long interUbidots  = 60000;                   // interval at which to update UbiDots (milliseconds)
 
 bool shouldSaveConfig = false;
 WiFiClient client;
-SoftwareSerial myclient(3, 1);
+
+void recvWithEndMarker() {
+  static byte ndx = 0;
+  char endMarker = '\n';
+  char rc;
+
+  // if (Serial.available() > 0) {
+  while (Serial.available() > 0 && newData == false) {
+    rc = Serial.read();
+
+    if (rc != endMarker) {
+      receivedChars[ndx] = rc;
+      ndx++;
+      if (ndx >= numChars) {
+        ndx = numChars - 1;
+      }
+    }
+    else {
+      receivedChars[ndx] = '\0'; // terminate the string
+      ndx = 0;
+      newData = true;
+    }
+  }
+}
+
+String getStringPartByNr(String data, char separator, int index) {
+  // spliting a string and return the part nr index
+  // split by separator
+
+  int stringData = 0;        //variable to count data part nr
+  String dataPart = "";      //variable to hole the return text
+
+  for (int i = 0; i < data.length() - 1; i++) { //Walk through the text one letter at a time
+
+    if (data[i] == separator) {
+      //Count the number of times separator character appears in the text
+      stringData++;
+
+    } else if (stringData == index) {
+      //get the text when separator is the rignt one
+      dataPart.concat(data[i]);
+
+    } else if (stringData > index) {
+      //return text and stop if the next separator appears - to save CPU-time
+      return dataPart;
+      break;
+    }
+  }
+  //return text if this is the last part
+  return dataPart;
+}
 
 void updateUbidots() {
   unsigned long curMillisUbidots = millis();
@@ -36,19 +85,19 @@ void updateUbidots() {
     all += "{\"variable\": \"";
     all += tempID1;
     all += "\", \"value\":";
-    all += temp1;
+    all += getStringPartByNr(receivedChars, ',', 0);
     all += "}";
 
     all += ",{\"variable\": \"";
     all += tempID2;
     all += "\", \"value\":";
-    all += temp2;
+    all += getStringPartByNr(receivedChars, ',', 1);
     all += "}";
 
     all += ",{\"variable\": \"";
     all += setpointID;
     all += "\", \"value\":";
-    all += setpoint;
+    all += getStringPartByNr(receivedChars, ',', 2);
     all += "}";
     all += "]";
     i = all.length();
@@ -65,9 +114,9 @@ void updateUbidots() {
                     "\r\n";
 
     if (client.connect(HTTPSERVER, 80)) {
-      Serial.println("");
-      Serial.println("----------------------- SENDING TO UBIDOTS ----------------------- ");
-      Serial.print("Temperature1: "); Serial.print(temp1); Serial.print("*C,  "); Serial.print("Temperature2: "); Serial.print(temp2); Serial.print("*C,  "), Serial.print("Setpoint: "); Serial.print(setpoint); Serial.println("*C");
+      Serial.print(ubidotsToken); Serial.print(","); Serial.print(tempID1); Serial.print(","); Serial.print(tempID2); Serial.print(","); Serial.print(setpointID);
+      Serial.print("-- SENDING TO UBIDOTS -> ");
+      Serial.print("Temperature1: "); Serial.print(getStringPartByNr(receivedChars, ',', 0)); Serial.print("*C,  "); Serial.print("Temperature2: "); Serial.print(getStringPartByNr(receivedChars, ',', 1)); Serial.print("*C,  "), Serial.print("Setpoint: "); Serial.print(getStringPartByNr(receivedChars, ',', 2)); Serial.print("*C");
       client.print(toPost);
     }
 
@@ -87,8 +136,7 @@ void saveConfigCallback () {
 }
 
 void setup() {
-  Serial.begin(115200);
-  myclient.begin(115200);
+  Serial.begin(9600);
   Serial.println();
 
   //SPIFFS.format();    //clean FS, for testing
@@ -181,46 +229,20 @@ void setup() {
 }
 
 void loop() {
-  if (myclient.available())  {
-    char c = myclient.read();
-    if (c == '\n') {
-      Serial.println(readString);
-      temp_loc1 = readString.indexOf("TEMP1");
-      temp1 = readString.substring(temp_loc1 + 4, temp_loc1 + 9);
-      /*int tempChar;
-      char tempArray[5];
-      temp.toCharArray(tempArray, sizeof(tempArray));
-      tempChar = atoi(tempArray);*/
-      Serial.println("");
-      Serial.print("Temperatur1: ");
-      Serial.print(temp1);
-      Serial.print(" C, ");
-      
-      temp_loc2 = readString.indexOf("TEMP2");
-      temp2 = readString.substring(temp_loc2 + 4, temp_loc2 + 9);
-      /*int humiChar;
-      char humiArray[5];
-      humi.toCharArray(humiArray, sizeof(humiArray));
-      humiChar = atoi(humiArray);*/
-      Serial.print("Temperatur2: ");
-      Serial.print(temp2);
-      Serial.println(" C");
-
-      setpoint_loc = readString.indexOf("SETPOINT");
-      setpoint = readString.substring(setpoint_loc + 4, setpoint_loc + 9);
-      /*int humiChar;
-      char humiArray[5];
-      humi.toCharArray(humiArray, sizeof(humiArray));
-      humiChar = atoi(humiArray);*/
-      Serial.print("Setpoint: ");
-      Serial.print(setpoint);
-      Serial.println(" C");
-
-      readString = "";
-      substring = "";
-    } else {
-      readString += c;
-    }
-  }
+  recvWithEndMarker();
   updateUbidots();
+  if (newData == true) {
+    Serial.print("This just in ... ");
+    Serial.println(receivedChars);
+
+    Serial.print("TEMP1: ");
+    Serial.println(getStringPartByNr(receivedChars, ',', 0));
+
+    Serial.print("TEMP2: ");
+    Serial.println(getStringPartByNr(receivedChars, ',', 1));
+
+    Serial.print("SETPOINT: ");
+    Serial.println(getStringPartByNr(receivedChars, ',', 2));
+    newData = false;
+  }
 }

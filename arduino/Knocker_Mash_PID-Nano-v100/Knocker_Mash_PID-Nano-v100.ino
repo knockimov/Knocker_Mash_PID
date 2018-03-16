@@ -6,27 +6,16 @@
 #include <DallasTemperature.h>
 #include <LiquidCrystal_I2C.h>
 #include <EEPROM.h>
-
-/*// ************************************************
-// WiFi cridentials, variables and constants
-// ************************************************
-#define IP "things.ubidots.com"
-const char* ssid     = "KnockTun";
-const char* password = "charles1dickens";
-char token[35]  = "A1E-TXA4A6lGIVYy53ZFKwlWMk95wY69BY";
-char varID1[25] = "5a18ffe1c03f971bf4188766";           // Temperature
-char varID2[25] = "5a1fce25c03f971453d05759";           // Setpoint
-WiFiClient client;*/
+//#include <SoftwareSerial.h>
 
 // ************************************************
 // PID Variables and constants
 // ************************************************
 #define RELAY_PIN  A1
-double Setpoint, Input1, Input2, Output;                                        // Define Variables we'll be connecting to
+double Setpoint, Input1, Input2, Output;                                // Define Variables we'll be connecting to
 double Kp, Ki, Kd;                                                      // PID tuning parameters
 const int SpAddress = 0, KpAddress = 8, KiAddress = 16, KdAddress = 24; // EEPROM addresses for persisted data
 PID myPID(&Input1, &Output, &Setpoint, Kp, Ki, Kd, P_ON_M, DIRECT);     // Specify the links and initial tuning parameters. P_ON_M specifies that Proportional on Measurement be used, P_ON_E (Proportional on Error) is the default behavior
-//PID myPID(&Input, &Output, &Setpoint, 85, 0.5, 0.5, P_ON_M, DIRECT);  // Specify the links and initial tuning parameters
 
 // ************************************************
 // Auto Tune Variables and constants
@@ -51,9 +40,7 @@ volatile byte button_select, button_left, button_right, button_up, button_down;
 // ************************************************
 // Timers
 // ************************************************
-//unsigned long prevMillisUbidots = 0;           // will store last time Ubidots was updated
 unsigned long previousMillis = 0;              // will store last time temp was updated
-//const long interUbidots = 60000;               // interval at which to update UbiDots (milliseconds)
 const long interval = 1000;                    // interval at which to update temp to Wemos (milliseconds)
 
 // ************************************************
@@ -87,7 +74,6 @@ void read_but() {
   if (pin_status == HIGH && button_select == 128) {
     button_select = 1;
     lastInput = millis();
-    Serial.println("Button Select pressed!");
   }
 
   pin_status = digitalRead(BUTTON_LEFT);
@@ -97,7 +83,6 @@ void read_but() {
   if (pin_status == HIGH && button_left == 128) {
     button_left = 1;
     lastInput = millis();
-    Serial.println("Button Left pressed!");
   }
 
   pin_status = digitalRead(BUTTON_RIGHT);
@@ -107,7 +92,6 @@ void read_but() {
   if (pin_status == HIGH && button_right == 128) {
     button_right = 1;
     lastInput = millis();
-    Serial.println("Button Right pressed!");
   }
 
   pin_status = digitalRead(BUTTON_UP);
@@ -117,7 +101,6 @@ void read_but() {
   if (pin_status == HIGH && button_up == 128) {
     button_up = 1;
     lastInput = millis();
-    Serial.println("Button Up pressed!");
   }
 
   pin_status = digitalRead(BUTTON_DOWN);
@@ -127,61 +110,14 @@ void read_but() {
   if (pin_status == HIGH && button_down == 128) {
     button_down = 1;
     lastInput = millis();
-    Serial.println("Button Down pressed!");
   }
 }
 
-/*void updateUbidots() {
-  unsigned long curMillisUbidots = millis();
-
-  if (curMillisUbidots - prevMillisUbidots >= interUbidots) {
-    prevMillisUbidots = curMillisUbidots;   // save the last time updated Ubidots
-
-    if (!client.connect(IP, 80)) {
-      return;
-    }
-
-    String url = "[";
-    url += "\ {\"variable\": \"";
-    url += varID1;
-    url += "\", \"value\":";
-    url += Input1;
-    url += "}";
-
-    url += "\," "\{\"variable\": \"";
-    url += varID2;
-    url += "\", \"value\":";
-    url += Setpoint;
-    url += "}";
-    url += "]";
-
-    client.print(String("POST /api/v1.6/collections/values/?token=") + token + " HTTP/1.1\r\n");
-    client.print(String("Host: ") + IP + "\r\n");
-    client.println("Content-Type: application/json");
-    client.print("Content-Length: ");
-    client.println(url.length());
-    client.println();
-    client.println(url);
-
-    Serial.print("-------------- UPDATED UBIDOTS WITH SENSOR AND SETPOINT DATA --------------");
-  }
-}*/
+//SoftwareSerial myclient(9, 8);
 
 void setup() {
   Serial.begin(9600);
-
-  /*WiFi.begin(ssid, password);
-  Serial.println();
-  Serial.print("Connecting to ");
-  Serial.println(ssid);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-  Serial.println("");
-  Serial.println("WiFi connected");
-  Serial.println("IP address: ");
-  Serial.println(WiFi.localIP());*/
+  //myclient.begin(9600);
 
   pinMode(RELAY_PIN, OUTPUT); // Output mode to drive relay
   analogWrite(RELAY_PIN, 0);  // make sure it is off to start
@@ -208,13 +144,12 @@ void setup() {
   sensors.setResolution(tempSensor1, 12);
   sensors.setResolution(tempSensor2, 12);
   sensors.setWaitForConversion(false);
-  Serial.print("Temperature sensor 1: "); Serial.println(tempSensor1[7], HEX);
-  Serial.print("Temperature sensor 2: "); Serial.println(tempSensor2[7], HEX);
+  //Serial.print("Temperature sensor 1: "); Serial.println(tempSensor1[7], HEX);
+  //Serial.print("Temperature sensor 2: "); Serial.println(tempSensor2[7], HEX);
 
   LoadParameters();
   myPID.SetTunings(Kp, Ki, Kd);
   myPID.SetMode(AUTOMATIC);                     //turn the PID on
-  //Setpoint = 67;
 }
 
 void loop() {
@@ -242,7 +177,6 @@ void loop() {
       TuneD();
       break;
   }
-  //updateUbidots();
 }
 
 // ************************************************
@@ -260,7 +194,7 @@ void Man() {
 
     float increment = 5;
     if (button_select == 1) {
-      increment *= 50;
+      increment *= 4;
     }
     if (button_right == 1) {
       opState = OFF;
@@ -282,7 +216,15 @@ void Man() {
     lcd.print(Output);
     lcd.print(" ");
     analogWrite(RELAY_PIN, Output);
-    Serial.print("Analog value of "); Serial.print(Output); Serial.print(" sent to analog output "); Serial.println(RELAY_PIN);
+    
+    int pct = map(Output, 0, 255, 0, 1000);
+    lcd.setCursor(11, 1);
+    lcd.print(F("      "));
+    lcd.setCursor(11, 1);
+    lcd.print(pct / 10);
+    lcd.print("%  ");
+    
+    
   }
 }
 
@@ -538,7 +480,6 @@ void Run() {
   lcd.print(F("Sp:"));
   lcd.print(Setpoint);
   lcd.write(1);
-  //lcd.print(F(":  "));
 
   SaveParameters();
   myPID.SetTunings(Kp, Ki, Kd);
@@ -605,16 +546,10 @@ void DoControl() {
     myPID.Compute();
   }
 
-  unsigned long currentMillis = millis();
+  unsigned long currentMillis = millis();   // Send temperatures and setpoint to the ESP
   if (currentMillis - previousMillis >= interval) {
     previousMillis = currentMillis;   // save the last time temp was sent
-    Serial.print("Setpoint: "); Serial.print(Setpoint); Serial.print(" ");
-    Serial.print("Input1: "); Serial.print(Input1); Serial.print(" ");
-    Serial.print("Input2: "); Serial.print(Input2); Serial.print(" ");
-    Serial.print("Output: "); Serial.print(Output); Serial.print(" ");
-    Serial.print("kP: "); Serial.print(myPID.GetKp()); Serial.print(" ");
-    Serial.print("kI: "); Serial.print(myPID.GetKi()); Serial.print(" ");
-    Serial.print("kD: "); Serial.print(myPID.GetKd()); Serial.println();
+    Serial.print("temp1"); Serial.print(Input1); Serial.print(","); Serial.print("temp2"); Serial.print(Input2); Serial.print(","); Serial.print("setpoint"); Serial.println(Setpoint);
   }
 }
 
