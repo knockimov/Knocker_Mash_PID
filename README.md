@@ -3,7 +3,7 @@
 
 <h4>Denna PID är en IoT (Internet of Things) och är uppkopplad mot Ubidots för loggning av mäsktemperatur och börvärdet som du ställer in.
 Det ger dig möjlighet att visuellt få en bild av hur temperatturen varit under hela mäskningen genom att den loggade datan presenteras i
-prydliga grafer. För att göra hela denna IoT ännu bättre är det även en PID som fixar att hålla din mäsk helt precis i rätt temperatur.
+prydliga grafer. För att göra hela denna IoT ännu bättre är det även en PID som fixar att hålla din mäsk helt precis i rätt temperatur.<br>
 Det kommer dock krävas av dig att du testar några startvärden som ligger utanför standardvärdena som är inställda. När du hittar ett värde
 som ligger runt 0.5 grader kan du slå på autoPID och göra en automatisk inställning av värdena som behövs för att hålla din mäsk i perfekt
 temperatur.</h4>
