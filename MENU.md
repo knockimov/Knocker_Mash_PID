@@ -31,6 +31,7 @@ kommer systemet att automatiskt spara värdet och gå tillbaka till startläget 
 - Höj eller sänk värdet med upp och ner knapparna. Höjs och minskas med 0,01 per knapptryckning,
 10 om man trycker in select och 0,01 om man trycker in select en gång till. När du slutar att trycka
 kommer systemet att automatiskt spara värdet och gå tillbaka till startläget efter tre sekunder.<p>
+<img src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/menu_buttons.jpg"></img><br>
 
 <h4>Startlägets layout</h4>
 I startläget (automatiskt) ser du i övre raden på LCD-skärmen börvärdet och procentuellt hur hög
@@ -50,7 +51,8 @@ För att stänga av den snabbt vid kokslut trycker en gång åt höger, annars s
 <li>Gerber-filer (PCB): <a href="https://github.com/knockimov/Knocker_Mash_PID/tree/master/gerber"> länk</a></li>
 <li>Bygginstruktioner: <a href="https://github.com/knockimov/Knocker_Mash_PID/blob/master/BUILD.md"> länk</a></li>
 <li>Sketcher: <a href="https://github.com/knockimov/Knocker_Mash_PID/tree/master/arduino"> länk</a></li>
-<li>Arduino IDE: <a href="https://github.com/knockimov/Knocker_Mash_PID/tree/master/ARDUINO.md"> länk</a></li>
+<li>Arduino IDE: <a href="https://www.arduino.cc/en/Guide/Windows"> länk</a> (ny hemsida)</li>
+<li>ESP8266 Arduino: <a href="https://github.com/esp8266/Arduino"> länk</a> (ny hemsida)</li>
 <li>Menystruktur: <a href="https://github.com/knockimov/Knocker_Mash_PID/blob/master/MENU.md"> länk</a> - <b>Du är här!</b></li>
 <li>Användarinstruktioner: <a href="https://github.com/knockimov/Knocker_Mash_PID/blob/master/GUIDE.md"> länk</a></li>
 </ul>
