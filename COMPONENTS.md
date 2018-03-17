@@ -25,7 +25,7 @@ Antal|Komponent|Länk
 1st|5V Fläkt 40x40mm|<a href="https://www.ebay.com/itm/DC-5V-2P-4010-Brushless-Fan-Cooler-40mm-40x40x10mm-4010s-Cooling-Fan/252578080018?hash=item3aced3a512:g:9ocAAOSwU8hY8Sfa">LÄNK</a>
 2st|DS18B20 Sensor|<a href="https://www.ebay.com/itm/Sonda-con-Sensore-Temperatura-DS18B20-Cavo-Digitale-Impermeabile-Inox-1m-Arduino/152534796710?hash=item2383c849a6:g:QqMAAOSwcrpadGHc">LÄNK</a>
 1st|Resistor 4.7k Ohm|<a href="https://www.ebay.com/itm/Set-of-10-resistors-metal-1-4-watts-1-24-values-choice-1-Ohm-at-3-4-12ft/263390277429?hash=item3d5348af35:m:mtBeVcs4bTmH-uPQlroeYrQ">LÄNK</a>
-7st|Knappar|<a href="https://www.ebay.com/itm/10x-Push-button-White-6x6x6-mm-PCB-Switch-mini-touch-micro-4-pin-arduino/282832592950?hash=item41da22e036:g:HS0AAOxyY3ZRmks42>LÄNK</a>
+7st|Knappar|<a href="https://www.ebay.com/itm/10x-Push-button-White-6x6x6-mm-PCB-Switch-mini-touch-micro-4-pin-arduino/282832592950?hash=item41da22e036:g:HS0AAOxyY3ZRmks42">LÄNK</a>
 Xst|Jumperkablar - hane |<a href="https://www.ebay.com/itm/10-Cables-macho-macho-20cm-arduino-nano-uno-jumpers-dupont-2-54-protoboars/253483109669?hash=item3b04c54d25:g:KAgAAOSwHnFV4uwM">LÄNK</a>
 Xst|Jumperkablar - hona |<a href="https://www.ebay.com/itm/40pcs-Dupont-Female-to-Female-Jumper-Wire-Ribbon-Cable-Pi-Breadboard-Arduino-CN/282673197345?hash=item41d0a2b121:g:Gd8AAOSw7rdaaPja">LÄNK</a>
 
