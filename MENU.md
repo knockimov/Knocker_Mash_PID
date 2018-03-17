@@ -7,7 +7,8 @@ För att styra din PID används dem fem knapparna. Menysystemet är uppbyggt enl
 
 <h4>Uppstart</h4>
 När din PID startas kommer den stå i läget "Avstängd". I det läget händer inget och själva systemet
-väntar på användarinput. Din PID är förinställd med P = 85, I = 0,5 och D = 0,5.<p>
+väntar på användarinput. Din PID är förinställd med P = 85, I = 0,5 och D = 0,5.<br>
+<img src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/menu_off.jpg"></img><br>
 
 För att slå på den och ändra inställningar gör du så här:
 1. Starta systemet genom att trycka på höger knapp en gång.
@@ -33,7 +34,8 @@ kommer systemet att automatiskt spara värdet och gå tillbaka till startläget 
 
 <h4>Startlägets layout</h4>
 I startläget (automatiskt) ser du i övre raden på LCD-skärmen börvärdet och procentuellt hur hög
-styrningen är för värmeelementet. I andra raden är båda temperaturmätarna som ger aktuell temperatur.<p>
+styrningen är för värmeelementet. I andra raden är båda temperaturmätarna som ger aktuell temperatur.<br>
+<img src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/menu_running.jpg"></img><br>
 
 <h4>Manuellt läge</h4>
 För att köra din PID i manuellt läge trycker du två gång på vänstra knappen om du står i startläget,
