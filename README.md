@@ -23,4 +23,7 @@ temperatur.</h4>
 <li>ESP8266 Arduino: <a href="https://github.com/esp8266/Arduino"> länk</a> (ny hemsida)</li>
 <li>Menystruktur: <a href="https://github.com/knockimov/Knocker_Mash_PID/blob/master/MENU.md"> länk</a></li>
 <li>Användarinstruktioner: <a href="https://github.com/knockimov/Knocker_Mash_PID/blob/master/GUIDE.md"> länk</a></li>
-</ul>
+</ul><p>
+
+<h4>Idé och inspiration kommer från <a href="https://learn.adafruit.com/sous-vide-powered-by-arduino-the-sous-viduino/">Sous Viduino</a>.
+Därifrån har jag gjort kodförändringar så den passar för mäskning istället.</h4>
