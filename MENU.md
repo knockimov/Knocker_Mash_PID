@@ -33,6 +33,13 @@ kommer systemet att automatiskt spara värdet och gå tillbaka till startläget 
 kommer systemet att automatiskt spara värdet och gå tillbaka till startläget efter tre sekunder.<p>
 <img src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/menu_buttons.jpg"></img><br>
 
+<h4>AutoPID - automatisk inställning av värden</h4>
+Om du skulle vilja testa att be din PID att automatiskt ställa in värden som funkar för ditt systen så
+behöver temperaturen ligga 0.5 grader celsius från ditt börvärde innan funktionen aktiveras. När du
+håller ett relativt nära värde aktiveras autoPID med knappvalet "Select" och "Right" samtidigt. Då
+kommer din PID att kalibrera sina värden automatiskt. När den är klar kommer du kunna att finjustera
+värdena enligt anvisningarna ovan.
+
 <h4>Startlägets layout</h4>
 I startläget (automatiskt) ser du i övre raden på LCD-skärmen börvärdet och procentuellt hur hög
 styrningen är för värmeelementet. I andra raden är båda temperaturmätarna som ger aktuell temperatur.<br>
