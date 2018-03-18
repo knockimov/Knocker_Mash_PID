@@ -1,36 +1,45 @@
 #include <ESP8266WiFi.h>
 
+/**************************************************************************
+ * Configuration of Knocker Mash PID
+ * 
+ * Change the variable ID och setpoint, temperature 1 and temperature 2
+ * so they correspond to your account on Ubidots.
+ * 
+ * Match the SSID and password for your home network.
+ **************************************************************************/
+#define SETID  ""     // Ubidots variable ID, Setpoint
+#define TEMID1 ""     // Ubidots variable ID, Temperature 1
+#define TEMID2 ""     // Ubidots variable ID, Temperature 2
+#define TOKEN  ""     // Ubidots TOKEN
+#define WIFISSID ""   // Your WiFi SSID
+#define PASSWORD ""   // Your WiFi password
+
+/**************************************************************************
+ * DO NOT EDIT BELOW, IT MAY CORRUPT THE PID
+ **************************************************************************/
 #define USER_AGENT "UbidotsESP8266"
 #define VERSION "1.6"
 #define HTTPSERVER "things.ubidots.com"
-#define SETID  "5a1fce25c03f971453d05759"           // Ubidots variable ID, Setpoint
-#define TEMID1 "5a18ffe1c03f971bf4188766"           // Ubidots variable ID, Temperature
-#define TEMID2 "5aaa6c9cc03f9775a7300187"           // Ubidots variable ID, Humidituý
-#define TOKEN  "A1E-TXA4A6lGIVYy53ZFKwlWMk95wY69BY" // Ubidots TOKEN
-#define WIFISSID "KnockTun"                         // Your WiFi SSID
-#define PASSWORD "charles1dickens"                  // Your WiFi password
-
-int temp1loc, temp2loc, setpointloc;
-String readString, substring;
-String temp1, temp2, setpoint;
-char temp1Array[6], temp2Array[6], setpointArray[6];
-
-unsigned long prevMillisUbidots  = 0;               // will store last time Ubidots was updated
-const long interUbidots  = 30000;                   // interval at which to update UbiDots (milliseconds)
-
 WiFiClient client;
 
-void setup() {
-  Serial.begin(9600); // Initialize serial port
-  WiFi.begin(WIFISSID, PASSWORD);
-}
+/**************************************************************************
+ * Serial reading and manipulation
+ **************************************************************************/
+int temp1loc, temp2loc, setpointloc;
+char temp1Array[6], temp2Array[6], setpointArray[6];
+String readString, substring, temp1, temp2, setpoint;
 
-void loop() {
+/**************************************************************************
+ * Timer function
+ **************************************************************************/
+unsigned long prevMillisUbidots  = 0;   // will store last time Ubidots was updated
+const long interUbidots  = 30000;       // interval at which to update UbiDots (milliseconds)
 
+void serialRead(); {
   if (Serial.available()) {
     char c = Serial.read();
-    if (c == '\n') {      //temp123.50,temp224.06,setpoint66.70
-      //Serial.println(readString);
+    if (c == '\n') {
       temp1loc = readString.indexOf("temp1");
       temp1 = readString.substring(temp1loc + 5, temp1loc + 10);
       temp1.toCharArray(temp1Array, sizeof(temp1Array));
@@ -52,16 +61,18 @@ void loop() {
       Serial.print(setpointArray);
       Serial.println("C");
 
-      readString = "";
+      readString = "";  // clear the string contents for new data
       substring = "";
     } else {
       readString += c;
     }
   }
+}
 
+void updateUbidots() {
   unsigned long curMillisUbidots = millis();
-  if (curMillisUbidots - prevMillisUbidots >= interUbidots) {
-    prevMillisUbidots = curMillisUbidots;   // save the last time Ubidots was updated
+  if (curMillisUbidots - prevMillisUbidots >= interUbidots) { // check to see if enough time has passed
+    prevMillisUbidots = curMillisUbidots;                     // save the last time Ubidots was updated
 
     uint16_t i;
     String all = "[";
@@ -97,10 +108,7 @@ void loop() {
                     "\r\n";
 
     if (client.connect(HTTPSERVER, 80)) {
-      Serial.print(TOKEN); Serial.print(","); Serial.print(TEMID1); Serial.print(","); Serial.print(TEMID2); Serial.print(","); Serial.print(SETID);
-      Serial.print("-- SENDING TO UBIDOTS -> ");
-      Serial.print("Temperature1: "); Serial.print(temp1Array); Serial.print("*C,  "); Serial.print("Temperature2: "); Serial.print(temp2Array); Serial.print("*C,  "), Serial.print("Setpoint: "); Serial.print(setpointArray); Serial.print("*C");
-      client.print(toPost);
+      client.print(toPost);   // update Ubidots variables
     }
 
     int timeout = 0;
@@ -110,4 +118,14 @@ void loop() {
     }
     client.stop();
   }
+}
+
+void setup() {
+  Serial.begin(9600);
+  WiFi.begin(WIFISSID, PASSWORD);
+}
+
+void loop() {
+  serialRead();
+  updateUbidots();
 }
