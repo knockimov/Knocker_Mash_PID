@@ -1,4 +1,3 @@
-//#include <ESP8266WiFi.h>
 #include <PID_v1.h>
 #include <PID_AutoTune_v0.h>
 #include <Wire.h>
@@ -6,7 +5,6 @@
 #include <DallasTemperature.h>
 #include <LiquidCrystal_I2C.h>
 #include <EEPROM.h>
-//#include <SoftwareSerial.h>
 
 // ************************************************
 // PID Variables and constants
@@ -113,11 +111,8 @@ void read_but() {
   }
 }
 
-//SoftwareSerial myclient(9, 8);
-
 void setup() {
   Serial.begin(9600);
-  //myclient.begin(9600);
 
   pinMode(RELAY_PIN, OUTPUT); // Output mode to drive relay
   analogWrite(RELAY_PIN, 0);  // make sure it is off to start
@@ -184,7 +179,8 @@ void loop() {
 // ************************************************
 void Man() {
   myPID.SetMode(MANUAL);
-  Output = 0; // Reset the output-buffer
+  int Output1 = 0;  // Setting the output to 0 (off)
+  
   lcd.clear();
   lcd.print("Set Output:");
 
@@ -202,29 +198,23 @@ void Man() {
       return;
     }
     if (button_up == 1) {
-      Output += increment;
+      Output1 += increment;
       button_up = 0;
       delay(50);
     }
     if (button_down == 1) {
-      Output -= increment;
+      Output1 -= increment;
       button_down = 0;
       delay(50);
     }
 
+    int pct1 = map(Output1, 0, 100, 0, 255);
+    pct1 = constrain(pct1, 0, 255); // Constraining the value between 0 and 100 %
+    Output1 = constrain(Output1, 0, 100);
     lcd.setCursor(0, 1);
-    lcd.print(Output);
-    lcd.print(" ");
-    analogWrite(RELAY_PIN, Output);
-    
-    int pct = map(Output, 0, 255, 0, 1000);
-    lcd.setCursor(11, 1);
-    lcd.print(F("      "));
-    lcd.setCursor(11, 1);
-    lcd.print(pct / 10);
-    lcd.print("%  ");
-    
-    
+    lcd.print(Output1);
+    lcd.print(" %  ");
+    analogWrite(RELAY_PIN, pct1);
   }
 }
 
