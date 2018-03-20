@@ -541,6 +541,7 @@ void DoControl() {
     previousMillis = currentMillis;   // save the last time temp was sent
     Serial.print("temp1"); Serial.print(Input1); Serial.print(","); Serial.print("temp2"); Serial.print(Input2); Serial.print(","); Serial.print("setpoint"); Serial.println(Setpoint);
   }
+  analogWrite(RELAY_PIN, Output);
 }
 
 // ************************************************
