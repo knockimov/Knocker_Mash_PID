@@ -32,14 +32,14 @@ PID_ATune aTune(&Input1, &Output);
 #define BUTTON_RIGHT  4
 #define BUTTON_UP     5
 #define BUTTON_DOWN   6
-unsigned long lastInput = 0; // last button press
+unsigned long lastInput = 0;    // Stores the last button press
 volatile byte button_select, button_left, button_right, button_up, button_down;
 
 // ************************************************
 // Timers
 // ************************************************
-unsigned long previousMillis = 0;              // will store last time temp was updated
-const long interval = 1000;                    // interval at which to update temp to Wemos (milliseconds)
+unsigned long previousMillis = 0;   // will store last time temp was updated
+const long interval = 1000;         // interval at which to update temp to ESP8266-01 (milliseconds)
 
 // ************************************************
 // Temperature sensors
@@ -230,10 +230,6 @@ void Off() {
   lcd.print(F("   MASH  PID"));
   button_select = 0; button_left = 0; button_right = 0; button_up = 0; button_down = 0;
 
-  /*while (button_right != 1) {
-    read_but();
-  }*/
-
   while (true) {
     read_but();
 
@@ -249,10 +245,6 @@ void Off() {
       button_right = 0;
       return;
     }
-
-  //sensors.requestTemperatures(); // Start an asynchronous temperature reading
-  //myPID.SetMode(AUTOMATIC);
-  //opState = RUN;
   }
 }
 
@@ -478,7 +470,7 @@ void Run() {
   while (true) {
     read_but();
 
-    if ( (button_select == 1) && (button_right == 1) && (abs(Input1 - Setpoint) < 0.5)) {  // Should be at steady-state
+    if ((button_select == 1) && (button_right == 1) && (abs(Input1 - Setpoint) < 0.5)) {  // Should be at steady-state
       StartAutoTune();
     }
     else if (button_right == 1) {
