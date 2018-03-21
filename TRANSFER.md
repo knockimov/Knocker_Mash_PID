@@ -3,7 +3,7 @@
 
 <h4>Ubidots</h4>
 Ubidots är en platform för att samla och grafiskt visa datapunkter, även där all data kommer att sparas från din Mash PID. Börja med att skapa ett konto på <a href="www.ubidots.com">Ubidots.com</a>. Det tar bara någon minut och är helt gratis. När du har ditt konto klart behöver du skapa en ny enhet genom att först klicka på "Devices" och sedan på "Add Device", namnge den MashPID eller liknande.<br>
-<img src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Sk%C3%A4rmklipp-002.JPG"></img><br>
+<img width="300" src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Sk%C3%A4rmklipp-002.JPG"></img><br>
 
 Klicka nu på din nya enhet för att öppna den. Ubidots bygger på att data loggas i olika variabler, en för varje typ av data som loggas. Du behöver nu skapa tre nya variabler genom att trycka på "Add variable". Namnge den första variabeln "Temperatur1", andra "Temperatur2" och sista "Setpoint".<br>
 <img width="300" src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Sk%C3%A4rmklipp-003.JPG"></img><br>
