@@ -13,18 +13,29 @@ Du behöver skriva ner fyra stycken ID, dem tre från variablerna och den fjärd
 <img src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Sk%C3%A4rmklipp-005.jpg"></img>
 <img width="550" src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Sk%C3%A4rmklipp-006.jpg"></img><p>
 
-Setup
-You will need a laptop and a micro USB cable (like the one that you charge a phone with). On the laptop, we need to install some software to be able to program the ESP8266. Visit Arduino.cc and install the Arduino IDE.
+<h4>Setup Arduino IDE</h4>
+Visit <a href="https://www.arduino.cc/en/Guide/Windows">Arduino.cc</a> and install the current upstream Arduino IDE at the 1.8 level or later. Once the program is installed, start Arduino IDE and click on "File" and then "Preferences".
+Enter http://arduino.esp8266.com/stable/package_esp8266com_index.json into "Additional Board Manager URLs" field. Open Boards Manager from "Tools" and then "Board" menu and install esp8266 platform.
 
-Arduino IDE
+För att kunna överföra sketcherna behöver du installera ett program från Arduino som de kallar för Arduino IDE. Besök <a href="https://www.arduino.cc/en/Guide/Windows">Arduino.cc</a> och installera den senaste versionen, 1.8 eller senare. När programmet är installerat startar du det och väljer "File" och sedan "Preferences".
+Fyll i länken http://arduino.esp8266.com/stable/package_esp8266com_index.json i fältet "Additional Board Manager URLs". Tryck sedan OK.
+Nu får du öppna "Boards Manager" genom att trycka op "Tools" och sedan "Board" för att installera ESP8266-platformen.<p>
+  
+Nu är hela installationen klar och det är dags att föra över sketcherna till din Arduino Nano och ESP-01.<p>
 
-Once the Arduino IDE is installed, open the program so we can do a couple of setup steps to get it ready to program ESP8266 devices. Under File, Preferences, and Additional Boards Manager URLs, add this link: http://arduino.esp8266.com/stable/package_esp8266com_index.json – this will allow the Arduino IDE to manage ESP8266 compatiable boards.
+<h3>Snabblänkar:</h3>
+<ul>
+<li>Komponentlista: <a href="https://github.com/knockimov/Knocker_Mash_PID/blob/master/COMPONENTS.md"> länk</a></li>
+<li>Gerber-filer (PCB): <a href="https://github.com/knockimov/Knocker_Mash_PID/tree/master/gerber"> länk</a></li>
+<li>Bygginstruktioner: <a href="https://github.com/knockimov/Knocker_Mash_PID/blob/master/BUILD.md"> länk</a></li>
 
-Arduino Preferences for ESP8266 programming
-Installing with Boards Manager
-Starting with 1.6.4, Arduino allows installation of third-party platform packages using Boards Manager. We have packages available for Windows, Mac OS, and Linux (32 and 64 bit).
-
-Install the current upstream Arduino IDE at the 1.8 level or later. The current version is at the Arduino website.
-Start Arduino and open Preferences window.
-Enter http://arduino.esp8266.com/stable/package_esp8266com_index.json into Additional Board Manager URLs field. You can add multiple URLs, separating them with commas.
-Open Boards Manager from Tools > Board menu and install esp8266 platform (and don't forget to select your ESP8266 board from Tools > Board menu after installation).
+<ul>
+<li>Installationsguide: <a href="https://github.com/knockimov/Knocker_Mash_PID/blob/master/TRANSFER.md"> länk</a> - <b>Du är här!</b></li>
+<li>Arduino IDE: <a href="https://www.arduino.cc/en/Guide/Windows"> länk</a> (ny hemsida)</li>
+<li>ESP8266 Arduino: <a href="https://github.com/esp8266/Arduino#installing-with-boards-manager"> länk</a> (ny hemsida)</li>
+<li>Sketcher: <a href="https://github.com/knockimov/Knocker_Mash_PID/tree/master/arduino"> länk</a></li>
+<li>Överföra sketcher: <a href="https://github.com/knockimov/Knocker_Mash_PID/blob/master/TRANSFER.md"> länk</a> - <b>Du är här!</b></li>
+</ul>
+<li>Menystruktur: <a href="https://github.com/knockimov/Knocker_Mash_PID/blob/master/MENU.md"> länk</a></li>
+<li>Användarinstruktioner: <a href="https://github.com/knockimov/Knocker_Mash_PID/blob/master/GUIDE.md"> länk</a></li>
+</ul>
