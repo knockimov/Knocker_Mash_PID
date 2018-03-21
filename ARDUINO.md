@@ -1,5 +1,4 @@
-<h2>Installation av Arduino IDE och överföring av sketcher</h2>
-<h3>Översättning pågår!!!</h3>
+<h2>Ubidots förberedelse och installation av Arduino IDE</h2>
 
 <h4>Ubidots</h4>
 Ubidots är en platform för att samla och grafiskt visa datapunkter, även där all data kommer att sparas från din Mash PID. Börja med att skapa ett konto på <a href="www.ubidots.com">Ubidots.com</a>. Det tar bara någon minut och är helt gratis. När du har ditt konto klart behöver du skapa en ny enhet genom att först klicka på "Devices" och sedan på "Add Device", namnge den MashPID eller liknande.<br>
@@ -13,10 +12,7 @@ Du behöver skriva ner fyra stycken ID, dem tre från variablerna och den fjärd
 <img src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Sk%C3%A4rmklipp-005.jpg"></img>
 <img width="550" src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Sk%C3%A4rmklipp-006.jpg"></img><p>
 
-<h4>Setup Arduino IDE</h4>
-Visit <a href="https://www.arduino.cc/en/Guide/Windows">Arduino.cc</a> and install the current upstream Arduino IDE at the 1.8 level or later. Once the program is installed, start Arduino IDE and click on "File" and then "Preferences".
-Enter http://arduino.esp8266.com/stable/package_esp8266com_index.json into "Additional Board Manager URLs" field. Open Boards Manager from "Tools" and then "Board" menu and install esp8266 platform.
-
+<h4>Installera Arduino IDE och ESP8266-platformen</h4>
 För att kunna överföra sketcherna behöver du installera ett program från Arduino som de kallar för Arduino IDE. Besök <a href="https://www.arduino.cc/en/Guide/Windows">Arduino.cc</a> och installera den senaste versionen, 1.8 eller senare. När programmet är installerat startar du det och väljer "File" och sedan "Preferences".
 Fyll i länken http://arduino.esp8266.com/stable/package_esp8266com_index.json i fältet "Additional Board Manager URLs". Tryck sedan OK.
 Nu får du öppna "Boards Manager" genom att trycka op "Tools" och sedan "Board" för att installera ESP8266-platformen.<p>
