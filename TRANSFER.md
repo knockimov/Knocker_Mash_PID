@@ -6,7 +6,7 @@ Ubidots är en platform för att samla och grafiskt visa datapunkter, även där
 <img width="300" src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Sk%C3%A4rmklipp-002.JPG"></img><br>
 
 Klicka nu på din nya enhet för att öppna den. Ubidots bygger på att data loggas i olika variabler, en för varje typ av data som loggas. Du behöver nu skapa tre nya variabler genom att trycka på "Add variable". Namnge den första variabeln "Temperatur1", andra "Temperatur2" och sista "Setpoint".<br>
-<img width="300" src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Sk%C3%A4rmklipp-003.JPG"></img><br>
+<img width="500" src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Sk%C3%A4rmklipp-003.JPG"></img><br>
 
 Du behöver skriva ner fyra stycken ID, dem tre från variablerna och den fjärde är din token. Din token hittar du under användarmenyn och "API Credentials".<br>
 <img src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Sk%C3%A4rmklipp-004.JPG"></img>
