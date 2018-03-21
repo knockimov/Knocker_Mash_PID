@@ -21,15 +21,13 @@ Arduino IDE
 Once the Arduino IDE is installed, open the program so we can do a couple of setup steps to get it ready to program ESP8266 devices. Under File, Preferences, and Additional Boards Manager URLs, add this link: http://arduino.esp8266.com/stable/package_esp8266com_index.json – this will allow the Arduino IDE to manage ESP8266 compatiable boards.
 
 Arduino Preferences for ESP8266 programming
+Installing with Boards Manager
+Starting with 1.6.4, Arduino allows installation of third-party platform packages using Boards Manager. We have packages available for Windows, Mac OS, and Linux (32 and 64 bit).
 
-The thing that you bought from Amazon uses the CP2102 USB driver. You might have to install a USB driver from Silicon Labs for this to work with your computer. Connect the ESP8266 to your laptop with the micro USB cable.
-
-USB Driver for the ESP8266 CP2102
-
-Back on the Arduino IDE, under tools, configure the following settings:
-Arduino Board Settings for NodeMCU
-
-Whew. We got through the setup. Now we can program this device or any ESP8266 compatible device and shouldn’t have to do that again.
+Install the current upstream Arduino IDE at the 1.8 level or later. The current version is at the Arduino website.
+Start Arduino and open Preferences window.
+Enter http://arduino.esp8266.com/stable/package_esp8266com_index.json into Additional Board Manager URLs field. You can add multiple URLs, separating them with commas.
+Open Boards Manager from Tools > Board menu and install esp8266 platform (and don't forget to select your ESP8266 board from Tools > Board menu after installation).
 
 Programming
 The code that the Arduino IDE uses is called a “sketch” – this is just a short program that the device runs over and over. In our project, we are going to have the code measure the signal strength of the Wi-Fi connection and upload the data to ThingSpeak, wait, and repeat. Over time we can see the signal strength of our Wi-Fi connection. Copy the example code to your Arduino IDE and change some of the defaults to match your Wi-Fi network and ThingSpeak settings.
