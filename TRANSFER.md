@@ -1,22 +1,15 @@
 <h2>Installation av Arduino IDE och överföring av sketcher</h2>
 <h3>Översättning pågår!!!</h3>
-Oh, my. I am sure you have been hearing about the Internet of Things… The IoT! You might be wondering how to get started with i(o)t. There are many places to start. You might be interested in the data that devices collect and analyzing it or you might be interested in how to deploy thousands of sensors around a factory floor to better understand how efficient things are. You might just want to tinker. Be the cool person at the party talking about Arduino, Raspberry Pi, and Maroon 5. If you want to try out a “thing” – a small, connected device – that can measure data, I will help you get started with a quick tutorial using the ESP8266 “thing”.
-
-Parts
-First, you need to go by a thing on Amazon. I recommend for this project an ESP8266 compatible device like the esp-01. Don’t be scared. Add it to your Amazon shopping list or ask Alexa to buy you one. It’s $8.
-
-ESP8266-01
 
 Other parts that you will need:
 
-Laptop
+Computer
 Micro USB cable
-ThingSpeak
-While you are waiting for your Amazon stuff to arrive, you can learn about ThingSpeak.
+Ubidots account
 
-ThingSpeak IoT Platform
+Ubidots
 
-ThingSpeak is where we are going to store the data collected by our thing and where we can see the data that we collected. Visit ThingSpeak.com and Sign Up for an account. This will just take a minute and user accounts are free. Once you have a user account, you need to create a channel. ThingSpeak channels are where data gets stored. Create a new channel by selecting Channels, My Channels, and then New Channel. Name the channel, “ESP8266 Signal Strength” and name Field 1, “RSSI”. Click “Save Channel” at the bottom to finish the process.
+Ubidots is where we are going to store the data collected by our thing and where we can see the data that we collected. Visit Ubidots.com and Sign Up for an account. This will just take a minute and user accounts are free. Once you have a user account, you need to create a device. Name the device "MashPID". Enter the newely created device by clicking its name. Ubidots variables are where data gets stored. Create a new variable by click on "Add variable". Name the variable, “Temperatur 1” and then create two more variables named "Temperatur 2" and "Setpoint" to finish the process.
 
 Channel_Settings
 
