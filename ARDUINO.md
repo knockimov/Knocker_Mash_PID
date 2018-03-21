@@ -15,8 +15,9 @@ Du behöver skriva ner fyra stycken ID, dem tre från variablerna och den fjärd
 <h4>Installera Arduino IDE och ESP8266-platformen</h4>
 För att kunna överföra sketcherna behöver du installera ett program från Arduino som de kallar för Arduino IDE. Besök <a href="https://www.arduino.cc/en/Guide/Windows">Arduino.cc</a> och installera den senaste versionen, 1.8 eller senare. När programmet är installerat startar du det och väljer "File" och sedan "Preferences".
 Fyll i länken http://arduino.esp8266.com/stable/package_esp8266com_index.json i fältet "Additional Board Manager URLs". Tryck sedan OK.
-Nu får du öppna "Boards Manager" genom att trycka op "Tools" och sedan "Board" för att installera ESP8266-platformen.<p>
-  
+Nu får du öppna "Boards Manager" genom att trycka op "Tools" och sedan "Board" för att installera ESP8266-platformen.
+<img width="550" src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/ArduinoIDE_Inst%C3%A4llningar.PNG"></img><p>
+
 Nu är hela installationen klar och det är dags att föra över sketcherna till din Arduino Nano och ESP-01.<p>
 
 <h3>Snabblänkar:</h3>
