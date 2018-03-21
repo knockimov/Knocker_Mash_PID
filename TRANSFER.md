@@ -2,12 +2,11 @@
 <h3>Översättning pågår!!!</h3>
 
 <h4>Ubidots</h4>
-Ubidots is where we are going to store the data collected by our thing and where we can see the data that we collected. Visit Ubidots.com and Sign Up for an account. This will just take a minute and user accounts are free. Once you have a user account, you need to create a device. Name the device "MashPID". Enter the newely created device by clicking its name. Ubidots variables are where data gets stored. Create a new variable by click on "Add variable". Name the variable, “Temperatur 1” and then create two more variables named "Temperatur 2" and "Setpoint" to finish the process.
-
-Ubidots är där alla datapunkter kommer att sparas från din Mash PID. Börja med att skapa ett konto på <a href="www.ubidots.com">Ubidots</a>. Det tar bara någon minut och är helt gratis. När du har ditt konto klart behöver du skapa en ny enhet, namnge den typ MashPID eller liknande. Klicka på din nya enhet. Ubidots bygger på att data loggas i olika variabler, en för varje typ av data som loggas. Du behöver nu skapa tre nya variabler genom att trycka på "Add variable". Namnge den första variabeln "Temperatur 1", andra "Temperatur 2" och sista "Setpoint". Du behöver skriva ner fyra stycken ID, dem tre från variablerna och din sist din token. Din token hittar du under användarmenyn och "API Credentials".
+Ubidots är en platform för att samla och grafiskt visa datapunkter, även där all data kommer att sparas från din Mash PID. Börja med att skapa ett konto på <a href="www.ubidots.com">Ubidots.com</a>. Det tar bara någon minut och är helt gratis. När du har ditt konto klart behöver du skapa en ny enhet genom att först klicka på "Devices" och sedan på "Add Device", namnge den MashPID eller liknande. Klicka på din nya enhet för att öppna den. Ubidots bygger på att data loggas i olika variabler, en för varje typ av data som loggas. Du behöver nu skapa tre nya variabler genom att trycka på "Add variable". Namnge den första variabeln "Temperatur1", andra "Temperatur2" och sista "Setpoint". Du behöver skriva ner fyra stycken ID, dem tre från variablerna och den fjärde är din token. Din token hittar du under användarmenyn och "API Credentials".
 <img src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Sk%C3%A4rmklipp-002.JPG"></img>
 <img src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Sk%C3%A4rmklipp-003.JPG"></img>
 <img src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Sk%C3%A4rmklipp-004.JPG"></img>
+<img src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Sk%C3%A4rmklipp-005.jpg"></img>
 <img src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Sk%C3%A4rmklipp-006.jpg"></img>
 
 Setup
