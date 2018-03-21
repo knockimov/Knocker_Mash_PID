@@ -11,7 +11,7 @@ Klicka nu på din nya enhet för att öppna den. Ubidots bygger på att data log
 Du behöver skriva ner fyra stycken ID, dem tre från variablerna och den fjärde är din token. Din token hittar du under användarmenyn och "API Credentials".<br>
 <img height="333" src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Sk%C3%A4rmklipp-004.JPG"></img>
 <img src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Sk%C3%A4rmklipp-005.jpg"></img>
-<img width="400" src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Sk%C3%A4rmklipp-006.jpg"></img><p>
+<img width="500" src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/Sk%C3%A4rmklipp-006.jpg"></img><p>
 
 Setup
 You will need a laptop and a micro USB cable (like the one that you charge a phone with). On the laptop, we need to install some software to be able to program the ESP8266. Visit Arduino.cc and install the Arduino IDE.
