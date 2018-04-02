@@ -18,6 +18,7 @@ ett pris som inte är lika fördelaktigt. Skulle kort, lödning eller något lik
 
 Antal|Komponent|Länk
 -----|---------|----
+1st|USB till TTL|<a href="https://www.ebay.com/itm/PL2303-USB-To-RS232-TTL-Converter-Adapter-Module-PL2303HX-for-Arduino-Cable/222535004296?hash=item33d01eb088:g:ZfcAAOSwrhBZNF7r">LÄNK</a>
 1st|ESP8266-01|<a href="https://www.ebay.com/itm/D1-mini-Mini-NodeMcu-4M-Lua-WIFI-IoT-development-board-based-ESP8266-by-WeMos-/222620206044">LÄNK</a>
 1st|Arudino Nano v3|<a href="https://www.ebay.com/itm/Nano-V3-0-Controle-Board-Atmega328P-Compatible-Arduino-Nano-V3-CH340-/322908047187">LÄNK</a>
 1st|Solid State Relay|<a href="https://www.ebay.com/itm/Rele-SSR-40DA-statico-stato-solido-40A-380-24Vac-32-3Vdc-solid-state-relay/322373636211?hash=item4b0ef75073:g:YwEAAOSwzgBYzEgd">LÄNK</a>
