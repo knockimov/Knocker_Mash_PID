@@ -9,7 +9,8 @@
 // ************************************************
 // PID Variables and constants
 // ************************************************
-#define RELAY_PIN  A1
+#define RELAY_PIN A1
+#define FAN_PIN 2
 double Setpoint, Input1, Input2, Output;                                // Define Variables we'll be connecting to
 double Kp, Ki, Kd;                                                      // PID tuning parameters
 const int SpAddress = 0, KpAddress = 8, KiAddress = 16, KdAddress = 24; // EEPROM addresses for persisted data
@@ -115,9 +116,12 @@ void setup() {
   Serial.begin(9600);
 
   pinMode(RELAY_PIN, OUTPUT); // Output mode to drive relay
-  analogWrite(RELAY_PIN, 0);  // make sure it is off to start
+  pinMode(FAN_PIN, OUTPUT); // Output mode to drive the fan
   pinMode(BUTTON_SELECT, INPUT_PULLUP); pinMode(BUTTON_LEFT, INPUT_PULLUP); pinMode(BUTTON_RIGHT, INPUT_PULLUP); pinMode(BUTTON_UP, INPUT_PULLUP); pinMode(BUTTON_DOWN, INPUT_PULLUP);
   button_select = 0; button_left = 0; button_right = 0; button_up = 0; button_down = 0;
+
+  analogWrite(RELAY_PIN, 0);  // make sure it is off to start
+  digitalWrite(FAN_PIN, LOW); // make sure it is off to start
 
   lcd.init();
   lcd.createChar(1, degree); // create degree symbol from the binary
@@ -171,6 +175,11 @@ void loop() {
     case TUNE_D:
       TuneD();
       break;
+  }
+  if (Output > 0) {
+    digitalWrite(FAN_PIN, HIGH);
+  } else {
+    digitalWrite(FAN_PIN, LOW);
   }
 }
 
