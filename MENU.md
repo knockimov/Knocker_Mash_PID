@@ -8,7 +8,7 @@ För att styra din PID används dem fem knapparna. Menysystemet är uppbyggt enl
 <h4>Uppstart</h4>
 När din PID startas kommer den stå i läget "Avstängd". I det läget händer inget och själva systemet
 väntar på användarinput. Din PID är förinställd med P = 85, I = 0,5 och D = 0,5.<br>
-<img width="400" src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/menu_off.jpg"> <img width="400" src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/menu_running.jpg"></img><br>
+<img width="350" src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/menu_off.jpg"><img width="350" src="https://github.com/knockimov/Knocker_Mash_PID/blob/master/images/menu_running.jpg"></img><br>
 
 För att slå på den och ändra inställningar gör du så här:
 1. Starta systemet genom att trycka på höger knapp en gång.
