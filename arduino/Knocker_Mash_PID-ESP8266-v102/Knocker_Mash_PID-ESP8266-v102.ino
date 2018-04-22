@@ -36,7 +36,7 @@ String readString, substring, temp1, temp2, setpoint;
 unsigned long prevMillisUbidots  = 0;   // will store last time Ubidots was updated
 const long interUbidots  = 30000;       // interval at which to update UbiDots (milliseconds)
 
-void serialRead(); {
+void serialRead() {
   if (Serial.available()) {
     char c = Serial.read();
     if (c == '\n') {
